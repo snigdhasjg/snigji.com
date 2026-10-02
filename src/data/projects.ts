@@ -1,4 +1,3 @@
-// TODO: replace with your real projects.
 export interface Project {
   name: string;
   description: string;
@@ -8,17 +7,30 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    name: 'snigji.com',
+    name: 'cloud-fusion',
     description:
-      'This site — a static, near-zero-JS Astro portfolio deployed to Cloudflare Workers ' +
-      'Static Assets, built to also serve OIDC issuer discovery for a personal Okta tenant.',
-    tech: ['Astro', 'Cloudflare Workers', 'TypeScript'],
-    links: [{ label: 'Source', href: 'https://github.com/TODO/snigji.com' }],
+      'Unified CLI for day-to-day AWS and GCP operations (formerly aws-fusion), published on PyPI.',
+    tech: ['Python', 'AWS', 'GCP'],
+    links: [
+      { label: 'Repo', href: 'https://github.com/snigdhasjg/cloud-fusion' },
+      { label: 'PyPI', href: 'https://pypi.org/project/cloud-fusion' },
+    ],
   },
   {
-    name: 'TODO: Project name',
-    description: 'TODO: One or two sentences on what it does and why it matters.',
-    tech: ['TODO'],
-    links: [{ label: 'Repo', href: 'https://github.com/TODO' }],
+    name: 'gke-gateway-cert-aggregator',
+    description:
+      'A Kubernetes controller for GKE Gateway that lets app teams declare GCP Certificate Manager ' +
+      "certs on their own HTTPRoute, aggregating those declarations onto the shared Gateway's HTTPS " +
+      'listener. Image and Helm chart are published as public GHCR packages.',
+    tech: ['Go', 'Kubernetes', 'GKE', 'Helm'],
+    links: [{ label: 'Repo', href: 'https://github.com/snigdhasjg/gke-gateway-cert-aggregator' }],
+  },
+  {
+    name: 'url-unshortener',
+    description:
+      'Self-hosted URL unshortener: given a shortened URL, walks the redirect chain and reports ' +
+      'every hop and the final destination, under a 5-second ceiling.',
+    tech: ['Java', 'Quarkus'],
+    links: [{ label: 'Repo', href: 'https://github.com/snigdhasjg/url-unshortener' }],
   },
 ];

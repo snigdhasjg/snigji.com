@@ -4,6 +4,8 @@ import { profile } from '../data/profile';
 import { experience } from '../data/experience';
 import { skills } from '../data/skills';
 import { projects } from '../data/projects';
+import { education } from '../data/education';
+import { publications } from '../data/publications';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog', ({ data }) => !data.draft))
@@ -18,6 +20,7 @@ const dateFmt = (d: Date) =>
   <section id="about">
     <h1>{profile.name}</h1>
     <p class="headline">{profile.headline}</p>
+    <p class="meta">{profile.location} · {profile.languages.join(', ')}</p>
     <p>{profile.summary}</p>
   </section>
 
@@ -74,6 +77,37 @@ const dateFmt = (d: Date) =>
     ))}
   </section>
 
+  <section id="education">
+    <h2>education</h2>
+    {education.map((item) => (
+      <article class="edu">
+        <h3>{item.field}</h3>
+        <p class="period">{item.degree} · {item.institution} · {item.period}{item.grade && ` · ${item.grade}`}</p>
+      </article>
+    ))}
+  </section>
+
+  <section id="publications">
+    <h2>publications</h2>
+    {publications.map((pub) => (
+      <article class="pub">
+        <h3>{pub.title}</h3>
+        <p class="period">{pub.venue} · {pub.date}</p>
+        <p>{pub.summary}</p>
+        {pub.links && (
+          <p class="project-links">
+            {pub.links.map((link, i) => (
+              <>
+                {i > 0 && ' · '}
+                <a href={link.href}>{link.label}</a>
+              </>
+            ))}
+          </p>
+        )}
+      </article>
+    ))}
+  </section>
+
   {posts.length > 0 && (
     <section id="writing">
       <h2>writing</h2>
@@ -92,9 +126,7 @@ const dateFmt = (d: Date) =>
   <section id="contact">
     <h2>contact</h2>
     <p>
-      Reach me at <a href={`mailto:${profile.email}`}>{profile.email}</a>,
-      or find me on <a href={profile.links.github}>GitHub</a> and
-      <a href={profile.links.linkedin}>LinkedIn</a>.
+      Reach me at <a href={`mailto:${profile.email}`}>{profile.email}</a> or find me on <a href={profile.links.linkedin}>LinkedIn</a>.
     </p>
   </section>
 </Base>
@@ -102,6 +134,12 @@ const dateFmt = (d: Date) =>
 <style>
   .headline {
     font-family: var(--font-mono);
+    color: var(--fg-dim);
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
     color: var(--fg-dim);
   }
 
@@ -119,7 +157,9 @@ const dateFmt = (d: Date) =>
   }
 
   .job + .job,
-  .project + .project {
+  .project + .project,
+  .edu + .edu,
+  .pub + .pub {
     margin-top: var(--space-3);
   }
 

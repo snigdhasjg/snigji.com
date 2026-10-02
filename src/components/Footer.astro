@@ -5,17 +5,14 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-  <p>
-    <span class="prompt">$</span> built with
-    <a href="https://astro.build">Astro</a>, served from
-    <a href="https://developers.cloudflare.com/workers/static-assets/">Cloudflare Workers</a>.
-  </p>
   <p class="links">
     <a href={`mailto:${profile.email}`}>email</a>
     ·
     <a href={profile.links.github}>github</a>
     ·
     <a href={profile.links.linkedin}>linkedin</a>
+    ·
+    <a href={profile.links.stackoverflow}>stackoverflow</a>
   </p>
   <p class="copyright">© {year} {profile.name}</p>
 </footer>

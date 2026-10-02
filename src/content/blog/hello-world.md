@@ -5,7 +5,7 @@ pubDate: 2026-10-03
 tags: ['meta']
 ---
 
-This is the first post on this site — mostly a placeholder to prove the blog pipeline
+This is the first post on this site, mostly a placeholder to prove the blog pipeline
 works end to end: Markdown in `src/content/blog`, rendered through Astro's content
 collections, with no client-side JavaScript involved.
 
