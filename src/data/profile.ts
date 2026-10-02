@@ -7,9 +7,9 @@ export const profile = {
     'I build and run the infrastructure that backend systems depend on — CI/CD pipelines, ' +
     'container platforms, observability, and infrastructure as code — drawing on years of ' +
     'hands-on backend development before moving into DevOps.',
-  email: 'hello@snigji.com', // TODO: replace with your preferred public contact address
+  email: 'connect@snigji.com',
   links: {
-    github: 'https://github.com/TODO',
-    linkedin: 'https://www.linkedin.com/in/TODO',
+    github: 'https://github.com/snigdhasjg',
+    linkedin: 'https://www.linkedin.com/in/snigdhajyoti',
   },
 } as const;
