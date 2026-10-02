@@ -17,6 +17,10 @@ There is no test suite and no linter configured in this repo. `astro check` (run
 
 When starting the dev server for an interactive session, prefer background mode: `astro dev --background`, managed with `astro dev stop` / `astro dev status` / `astro dev logs`.
 
+## Git workflow
+
+Commit directly to `main` — don't create a feature branch first. Cloudflare Workers Builds deploys straight from `main` on every push, there's no PR/review step in this repo's workflow, and the default "branch before committing on the default branch" caution doesn't apply here.
+
 ## Architecture
 
 This is a static Astro site (`output: 'static'`, no SSR adapter) deployed to **Cloudflare Workers Static Assets as an assets-only Worker** — there is no Worker script (`wrangler.jsonc` has no `main`). Cloudflare Workers Builds connects directly to the GitHub repo and runs `npm run build` then `npx wrangler deploy`; there is no GitHub Actions workflow.
