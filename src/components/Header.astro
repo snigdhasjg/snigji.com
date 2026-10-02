@@ -1,0 +1,65 @@
+---
+const nav = [
+  { href: '/', label: 'about' },
+  { href: '/#experience', label: 'experience' },
+  { href: '/#projects', label: 'projects' },
+  { href: '/blog', label: 'blog' },
+];
+---
+
+<header class="site-header">
+  <a class="brand" href="/">
+    <span class="prompt">~</span>/snigji
+  </a>
+  <nav aria-label="Primary">
+    <ul>
+      {nav.map((item) => (
+        <li><a href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--fg);
+    text-decoration: none;
+  }
+
+  .brand .prompt {
+    color: var(--accent);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+
+  nav a {
+    color: var(--fg-dim);
+    text-decoration: none;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--accent);
+  }
+</style>
