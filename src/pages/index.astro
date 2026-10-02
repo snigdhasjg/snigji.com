@@ -6,14 +6,6 @@ import { skills } from '../data/skills';
 import { projects } from '../data/projects';
 import { education } from '../data/education';
 import { publications } from '../data/publications';
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
-
-const dateFmt = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 
 <Base title="snigji.com" description={profile.summary}>
@@ -108,21 +100,6 @@ const dateFmt = (d: Date) =>
     ))}
   </section>
 
-  {posts.length > 0 && (
-    <section id="writing">
-      <h2>writing</h2>
-      <ul class="post-list">
-        {posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-            <span class="post-date">{dateFmt(post.data.pubDate)}</span>
-          </li>
-        ))}
-      </ul>
-      <p><a href="/blog">all posts →</a></p>
-    </section>
-  )}
-
   <section id="contact">
     <h2>contact</h2>
     <p>
@@ -179,25 +156,5 @@ const dateFmt = (d: Date) =>
   .project-links {
     font-family: var(--font-mono);
     font-size: 0.9rem;
-  }
-
-  .post-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .post-list li {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-2);
-    border-bottom: 1px solid var(--border);
-    padding: 0.5em 0;
-  }
-
-  .post-date {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    color: var(--fg-dim);
-    white-space: nowrap;
   }
 </style>
