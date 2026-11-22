@@ -5,24 +5,28 @@ export interface SkillGroup {
 
 export const skills: SkillGroup[] = [
   {
-    label: 'Cloud',
-    items: ['AWS (EKS, ECS, RDS, MSK, S3, Lambda, IAM, VPC)', 'GCP (GKE, Certificate Manager)', 'Cloudflare'],
+    label: 'Cloud (multi-cloud)',
+    items: ['AWS (EKS, ECS, RDS, MSK, S3, Lambda, IAM, VPC)', 'GCP (GKE)', 'Azure'],
   },
   {
     label: 'Infrastructure as Code',
-    items: ['Terraform', 'CloudFormation'],
+    items: ['Terraform', 'OpenTofu', 'CloudFormation', 'Azure Bicep'],
   },
   {
     label: 'Containers & Orchestration',
-    items: ['Docker', 'Kubernetes', 'Helm', 'ArgoCD', 'Gateway API'],
+    items: ['Docker', 'Kubernetes', 'Helm', 'Gateway API'],
   },
   {
-    label: 'CI/CD',
-    items: ['GitHub Actions', 'Jenkins', 'Azure DevOps', 'Octopus Deploy'],
+    label: 'CI/CD & GitOps',
+    items: ['GitHub Actions', 'ArgoCD', 'Jenkins', 'Azure DevOps', 'Octopus Deploy'],
+  },
+  {
+    label: 'Observability',
+    items: ['Datadog', 'OpenTelemetry', 'CloudWatch'],
   },
   {
     label: 'Backend',
-    items: ['Java', 'Spring Boot', 'Quarkus', 'Python', 'Go', 'REST APIs', 'Microservices'],
+    items: ['Java', 'Spring Boot','Python', 'Go', 'REST APIs', 'Microservices'],
   },
   {
     label: 'Data & Streaming',

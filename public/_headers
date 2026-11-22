@@ -3,6 +3,11 @@
   Access-Control-Allow-Origin: *
   Cache-Control: public, max-age=300
 
+/resume.pdf
+  Content-Type: application/pdf
+  Content-Disposition: inline; filename="Snigdhajyoti-Ghosh-Resume.pdf"
+  Cache-Control: public, max-age=300
+
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

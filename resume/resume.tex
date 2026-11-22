@@ -1,0 +1,127 @@
+% Résumé — maintained by hand, separately from src/data.
+% Build: `npm run resume:pdf` (Docker + TeX Live) -> public/resume.pdf
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=14mm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\pdfinterwordspaceon
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+
+\hypersetup{pdftitle={Snigdhajyoti Ghosh Resume}, pdfauthor={Snigdhajyoti Ghosh}, pdfsubject={Resume: DevOps, Platform and Backend Engineer}, pdfkeywords={DevOps, Platform Engineering, Backend, Kubernetes, Terraform, OpenTofu, GitOps, ArgoCD, Observability, AWS, GCP, Azure, Java, Spring Boot, Kafka}}
+
+\definecolor{dim}{gray}{0}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=1.1em, itemsep=1pt, topsep=2pt, parsep=0pt}
+
+\titleformat{\section}{\normalsize\bfseries}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+% \entry{title}{right-aligned detail}
+\newcommand{\entry}[2]{\textbf{#1}\hfill{\small\color{dim}#2}\par\vspace{1pt}}
+\newcommand{\tech}[1]{{\small\color{dim}\textbf{Technologies:} #1}\par}
+
+\begin{document}
+
+{\LARGE\bfseries Snigdhajyoti Ghosh}\par\vspace{2pt}
+{\color{dim}DevOps, Platform \& Backend Engineer}\par
+{\small\color{dim}India |
+\href{tel:+917428296269}{+91 74282 96269} |
+\href{mailto:connect@snigji.com}{connect@snigji.com} |
+\href{https://snigji.com}{snigji.com} |
+\href{https://github.com/snigdhasjg}{github.com/snigdhasjg} |
+\href{https://www.linkedin.com/in/snigdhajyoti}{linkedin.com/in/snigdhajyoti}}
+
+\section*{Summary}
+7+ years building backend systems and the platforms they run on. At Equal Experts I do
+platform engineering and DevOps for a multi-cloud (AWS, GCP, Azure) SaaS platform:
+Kubernetes, Terraform/OpenTofu, GitOps with ArgoCD, CI/CD automation and observability.
+Before that, I built Java/Spring Boot microservices, event-driven systems and data
+pipelines.
+
+\section*{Skills}
+\textbf{Cloud (multi-cloud):} AWS (EKS, ECS, RDS, MSK, S3, Lambda, IAM, VPC), GCP (GKE), Azure\par
+\textbf{Infrastructure as Code:} Terraform, OpenTofu, CloudFormation, Azure Bicep\par
+\textbf{Containers \& Orchestration:} Docker, Kubernetes, Helm, Gateway API\par
+\textbf{CI/CD \& GitOps:} GitHub Actions, ArgoCD, Jenkins, Azure DevOps, Octopus Deploy\par
+\textbf{Observability:} Datadog, OpenTelemetry, CloudWatch\par
+\textbf{Backend:} Java, Spring Boot, Python, Go, REST APIs, Microservices\par
+\textbf{Data \& Streaming:} Kafka, ksqlDB, Kafka Connect, Schema Registry, PostgreSQL/PostGIS, Spark\par
+\textbf{Testing:} JUnit, TestNG, Pytest, Gatling, JMeter\par
+
+\section*{Experience}
+
+\entry{DevOps Engineer, Equal Experts}{Aug 2023 \textendash{} Present}
+\begin{itemize}
+  \item One of 3\textendash{}4 DevOps engineers owning \textbf{end-to-end infrastructure design and operations} for an HR SaaS platform serving \textbf{10+ product teams} across \textbf{AWS, GCP and Azure}; also work with cross-functional teams on designs and ADRs.
+  \item Support two platform models: multi-tenant and single-app. The two B2B multi-tenant apps run \textbf{200+ tenants}, each with physically segregated processes.
+  \item Champion a \textbf{cloud-agnostic} setup: the same app runs on AWS, GCP and Azure with no cloud-specific dependencies, and I work closely with app teams so any new component is introduced with cloud-native principles in mind.
+  \item Manage the full stack as code with \textbf{Terraform and OpenTofu}: cloud infrastructure, Kubernetes, Okta and Datadog. Business users can \textbf{self-serve new tenants} through this setup.
+  \item Built \textbf{reusable Terraform modules} and \textbf{GitHub Actions CI/CD pipelines} that standardise provisioning and deployment across all apps.
+  \item Deploy containerised apps on \textbf{Kubernetes} using \textbf{Helm} and \textbf{GitOps (ArgoCD)}.
+  \item Set up \textbf{distributed tracing with OpenTelemetry}, so requests can be followed in Datadog alongside logs and metrics.
+  \item Over the past year, \textbf{migrated legacy~.NET apps to Kubernetes} and onboarded new apps onto it, including Python, Next.js, React and Angular workloads.
+  \item Introduced \textbf{AI-assisted DevOps} to fix pipeline failures and container-image vulnerabilities, and enabled \textbf{MCP workflows} so day-to-day ops (logs, deployment and service health) can be done in natural language.
+\end{itemize}
+\tech{.NET, Python, AWS, GCP, Azure, Terraform, OpenTofu, Okta, Datadog, OpenTelemetry, Kubernetes, Helm, ArgoCD, Docker, GitHub Actions, Octopus Deploy}
+
+\vspace{6pt}
+\entry{Senior Consultant, Thoughtworks}{Sep 2022 \textendash{} Aug 2023}
+\begin{itemize}
+  \item Built \textbf{RESTful domain APIs} for an e-commerce platform, with an \textbf{event-based system} syncing data from multiple sources into a single source of truth.
+  \item Led the \textbf{data pipeline} setup, a shared \textbf{Spring Boot} starter library, and \textbf{performance testing and tuning}.
+  \item Owned \textbf{code quality} and clean-code practices, drove estimation, and helped analyze architectural decisions in a \textbf{team of 14}.
+\end{itemize}
+\tech{Java 17, Spring Boot, Kafka, ksqlDB, AWS (EKS, MSK), Terraform, Gradle, Jenkins, GitHub Actions, Gatling}
+
+\newpage
+\entry{Consultant, Thoughtworks}{Jul 2020 \textendash{} Aug 2022}
+\begin{itemize}
+  \item Built and migrated \textbf{geolocation-based search microservices}: store/dealer finder, geocoding, and a localized proxy API\@.
+  \item Optimised geo-spatial queries and added RDS read-replica autoscaling, raising throughput from \textbf{48 to 126 TPS} (\textasciitilde{}2.6x).
+  \item Built \textbf{10+ CloudWatch dashboards} from custom metrics to track production trends.
+  \item Set up \textbf{CI/CD} in Azure DevOps with performance and integration tests, \textbf{cutting 5 minutes} off pipeline run time; \textbf{mentored 2 new team members}.
+\end{itemize}
+\tech{Java 11, Spring Boot, jOOQ, PostgreSQL/PostGIS, AWS (ECS, API Gateway, CloudFormation), Azure Pipelines, JMeter, Karate}
+
+\vspace{6pt}
+\entry{Graduate Consultant, Thoughtworks}{Jun 2019 \textendash{} Jun 2020}
+\begin{itemize}
+  \item \textbf{Migrated} an on-prem Cloudera Hadoop cluster \textbf{to AWS EMR} and extended the existing data pipeline.
+  \item Put a trained \textbf{ML model into production} in the pipeline and ensured clean input data.
+\end{itemize}
+\tech{Java 8, Python, Spark, Hive, Sqoop, Oozie, AWS (EMR, S3, Lambda), CloudFormation}
+
+\section*{Projects}
+
+\entry{homelab}{\href{https://github.com/snigdhasjg/homelab}{Repo}}
+Infrastructure-as-config for a self-hosted Raspberry Pi 5 homelab: Portainer-managed Docker Compose stacks behind Traefik, a single ipvlan L3 network split into firewall-enforced trust tiers on a MikroTik router, and borgmatic backups to an off-box Borg repository.\par
+\tech{Docker, Traefik, MikroTik, Raspberry Pi5}
+
+\vspace{4pt}
+\entry{cloud-fusion}{\href{https://github.com/snigdhasjg/cloud-fusion}{Repo} | \href{https://pypi.org/project/cloud-fusion}{PyPI}}
+Unified CLI for day-to-day AWS and GCP operations (formerly aws-fusion), published on PyPI.\par
+\tech{Python, AWS, GCP}
+
+\section*{Education}
+\entry{Bachelor of Technology (B.Tech.), Electronics and Communication Engineering}{Jul 2015 \textendash{} Jun 2019}
+Netaji Subhash Engineering College | CGPA 7.98
+
+\section*{Publications}
+\entry{An Approach to Geometric Modelling Using Genetic Programming}{Springer | Feb 2021}
+Derived the Pythagorean theorem from the measurements of right-angled triangles using a data-driven approach (symbolic regression with genetic programming) instead of a classical geometric proof.
+\href{https://link.springer.com/chapter/10.1007/978-981-15-8366-7_13}{Paper} |
+\href{https://github.com/snigdhasjg/Pythagorean-Triplate}{Code}
+
+\end{document}

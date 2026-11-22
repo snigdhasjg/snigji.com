@@ -10,7 +10,10 @@
     "build": "astro check && astro build",
     "preview": "wrangler dev",
     "deploy": "wrangler deploy",
-    "astro": "astro"
+    "astro": "astro",
+    "resume:image": "docker build -q -t resume-tex resume",
+    "resume:pdf": "npm run -s resume:image && docker run --rm -u $(id -u):$(id -g) -e HOME=/tmp -v \"$PWD\":/work resume-tex latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=public -auxdir=.latex-build resume/resume.tex",
+    "resume:watch": "npm run -s resume:image && docker run --rm -it -u $(id -u):$(id -g) -e HOME=/tmp -v \"$PWD\":/work resume-tex latexmk -pdf -pvc -view=none -interaction=nonstopmode -outdir=public -auxdir=.latex-build resume/resume.tex"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
