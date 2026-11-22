@@ -17,8 +17,10 @@ export const experience: Experience[] = [
       'Champion a cloud-agnostic setup: the same app runs on AWS, GCP and Azure with no cloud-specific dependencies, and I work closely with app teams so any new component is introduced with cloud-native principles in mind.',
       'Manage the full stack as code with Terraform and OpenTofu: cloud infrastructure, Kubernetes, Okta and Datadog. Business users can self-serve new tenants through this setup.',
       'Built reusable Terraform modules and GitHub Actions pipelines now used by all apps.',
+      'Deploy containerised apps on Kubernetes using Helm and GitOps (ArgoCD).',
       'Set up OpenTelemetry tracing in the applications so requests can be traced in Datadog alongside logs and metrics.',
       'Over the past year, migrated legacy .NET apps to Kubernetes and onboarded new apps onto it, including Python, Next.js, React and Angular workloads.',
+      'Introduced AI-assisted DevOps to fix pipeline failures and container-image vulnerabilities, and enabled MCP workflows so day-to-day ops (logs, deployment and service health) can be done in natural language.',
     ],
     tech: [
       '.NET',

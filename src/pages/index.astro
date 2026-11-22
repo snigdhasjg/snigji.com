@@ -9,11 +9,14 @@ import { publications } from '../data/publications';
 ---
 
 <Base title="snigji.com" description={profile.summary}>
-  <section id="about">
-    <h1>{profile.name}</h1>
-    <p class="headline">{profile.headline}</p>
-    <p class="meta">{profile.location} · {profile.languages.join(', ')}</p>
-    <p>{profile.summary}</p>
+  <section id="about" class="about">
+    <div class="avatar" role="img" aria-label={profile.name}></div>
+    <div>
+      <h1>{profile.name}</h1>
+      <p class="headline">{profile.headline}</p>
+      <p class="meta">{profile.location} · {profile.languages.join(', ')}</p>
+      <p>{profile.summary}</p>
+    </div>
   </section>
 
   <section id="experience">
@@ -109,6 +112,33 @@ import { publications } from '../data/publications';
 </Base>
 
 <style>
+  .about {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .avatar {
+    flex: none;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: var(--bg-elevated);
+    background-image: url('/profile.jpeg');
+    background-repeat: no-repeat;
+    /* zoom: image is 130% of the circle, offset 10px from the top so the head has a small gap */
+    background-size: 130%;
+    background-position: 50% 10px;
+    border: 2px solid var(--accent-dim);
+  }
+
+  @media (max-width: 560px) {
+    .about {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
   .headline {
     font-family: var(--font-mono);
     color: var(--fg-dim);
