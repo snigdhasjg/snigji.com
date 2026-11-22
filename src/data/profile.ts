@@ -13,6 +13,5 @@ export const profile = {
   links: {
     github: 'https://github.com/snigdhasjg',
     linkedin: 'https://www.linkedin.com/in/snigdhajyoti',
-    stackoverflow: 'https://stackoverflow.com/users/7857701/snigdhajyoti',
   },
 } as const;
