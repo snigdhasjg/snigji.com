@@ -7,6 +7,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: 'homelab',
+    description:
+      'Infrastructure-as-config for a self-hosted Raspberry Pi 5 homelab: Portainer-managed Docker ' +
+      'Compose stacks behind Traefik, a single ipvlan L3 network split into firewall-enforced trust ' +
+      'tiers on a MikroTik router, and borgmatic backups to an off-box Borg repository.',
+    tech: ['Docker', 'Traefik', 'MikroTik', 'Raspberry Pi5'],
+    links: [{ label: 'Repo', href: 'https://github.com/snigdhasjg/homelab' }],
+  },
+  {
     name: 'cloud-fusion',
     description:
       'Unified CLI for day-to-day AWS and GCP operations (formerly aws-fusion), published on PyPI.',

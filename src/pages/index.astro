@@ -26,7 +26,7 @@ import { publications } from '../data/publications';
         <h3>{job.role} <span class="at">@ {job.company}</span></h3>
         <p class="period">{job.period}</p>
         <ul>
-          {job.bullets.map((bullet) => <li>{bullet}</li>)}
+          {job.bullets.map((bullet) => <li set:html={bullet.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')} />)}
         </ul>
         <ul class="tag-list">
           {job.tech.map((t) => <li>{t}</li>)}
