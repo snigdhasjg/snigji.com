@@ -17,15 +17,16 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.3.5"
+    "@astrojs/sitemap": "^3.7.6",
+    "@resvg/resvg-js": "^2.6.2",
+    "astro": "^7.4.13"
   },
   "allowScripts": {
     "esbuild": true
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.12",
     "typescript": "^6.0.3",
-    "wrangler": "^4.147.0"
+    "wrangler": "^4.166.0"
   }
 }

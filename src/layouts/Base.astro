@@ -10,7 +10,7 @@ interface Props {
   image?: string;
 }
 
-const { title, description, ogType = 'website', image = '/og.svg' } = Astro.props;
+const { title, description, ogType = 'website', image = '/og.png' } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
